@@ -1,0 +1,16 @@
+ul {
+  margin-top:20px;
+  list-style-type:none;
+}
+
+li {
+  margin-top:10px;
+}
+
+.name {
+  font-weight:bold;
+}
+
+label {
+  display:block;
+}
