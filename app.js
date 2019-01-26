@@ -1,15 +1,23 @@
+/* global $ */
+
+ 
+
+'use strict';
+
 const API_KEY = 'jw5xJG0RXp0oqEODHj0rIhDjjIU9TFCRda8Hf7dx';
 //userLimit default to 10
 
 function fetchURI(userState, userLimit = 10){ 
   fetch(`https://developer.nps.gov/api/v1/parks?stateCode=${userState}&limit=${userLimit - 1}&fields=addresses&api_key=${API_KEY}`)
     .then(response => response.json())
-    .then((json) => display(generateHtml(json.data))) 
-};
+    .then((json) => display(generateHtml(json.data)));
+}
 
 function getUserState() {
-  const userState = $('.js-state').val();
-  return userState;
+  let userState = $('.js-state').val();
+
+  console.log(userState);
+  return userState.replace(/\s/g, '');
 }
 
 function display(string) {
