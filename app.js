@@ -15,8 +15,6 @@ function fetchURI(userState, userLimit = 10){
 
 function getUserState() {
   let userState = $('.js-state').val();
-
-  console.log(userState);
   return userState.replace(/\s/g, '');
 }
 
@@ -41,8 +39,8 @@ function generateHtml(array) {
         <li><a href ="${item.directionsUrl}">${item.addresses[1].line1} ${item.addresses[1].city} ${item.addresses[1].stateCode} ${item.addresses[1].postalCode}</a></li>
         <li><a href="${item.url}">Go to their website</a></li>
       </ul>
-    </li>`
-  })
+    </li>`;
+  });
 
   return html;
 }
@@ -52,7 +50,7 @@ function handleUserInput() {
     event.preventDefault();
     fetchURI(getUserState(), getUserLimit())
     $('.js-state').val('');
-  })
+  });
   
 }
 
